@@ -22,7 +22,7 @@ exports.question = function(q , cb ){
     });
 };
 function replaceAll(str, find, replace) {
-  return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+  return str.split(find).join(replace);
 }
 
 
@@ -79,5 +79,6 @@ function saveBoiler(title,description){
     if (err) return console.log(err);
   });
   console.log('Done!');
+  console.log('go work! -> http://localhost/'+folder);
   process.exit();
 }
